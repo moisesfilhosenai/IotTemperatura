@@ -101,20 +101,14 @@ public class MQTT {
     }
 
     private void exibindoDadosTela(String dados) {
+        // Separando os valores
+        String[] valores = dados.split("\\|");
 
-        // Encontrando o índice onde a temperatura começa e termina
-        int indexTemperaturaInicio = dados.indexOf("temperatura: ") + "temperatura: ".length();
-        int indexTemperaturaFim = dados.indexOf(" |");
+        // Atribuindo os valores separados às variáveis
+        String temperatura = valores[0];
+        String umidade = valores[1];
 
-        // Extraindo a temperatura usando substring
-        String temperatura = dados.substring(indexTemperaturaInicio, indexTemperaturaFim);
         tvTemperatura.setText(temperatura.concat(" °C"));
-
-        // Encontrando o índice onde a umidade começa e termina
-        int indexUmidadeInicio = dados.indexOf("umidade: ") + "umidade: ".length();
-
-        // Extraindo a umidade usando substring
-        String umidade = dados.substring(indexUmidadeInicio);
         tvUmidade.setText(umidade.concat(" %"));
     }
 }
