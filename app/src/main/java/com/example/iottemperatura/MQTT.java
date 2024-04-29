@@ -86,7 +86,7 @@ public class MQTT {
                 @Override
                 public void messageArrived(String topic, MqttMessage message) throws Exception {
                     String dados = new String(message.getPayload());
-                    Toast.makeText(context, "Mensagem recebida: " + dados, Toast.LENGTH_LONG).show();
+                    //Toast.makeText(context, "Mensagem recebida: " + dados, Toast.LENGTH_LONG).show();
                     exibindoDadosTela(dados);
                 }
 
